@@ -5,7 +5,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/matteodisalvo/Quantum-Viterbi-Algorithm/actions/workflows/tests.yml"><img src="https://github.com/matteodisalvo/Quantum-Viterbi-Algorithm/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/Qiskit-supported-6929C4" alt="Qiskit">
   <img src="https://img.shields.io/badge/PennyLane-supported-00B3A6" alt="PennyLane">

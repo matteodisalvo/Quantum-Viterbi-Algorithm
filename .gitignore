@@ -18,6 +18,9 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
+# Continuous integration, kept locally for now (see .github/workflows/tests.yml)
+.github/
+
 # Editors and OS
 .vscode/
 .idea/
