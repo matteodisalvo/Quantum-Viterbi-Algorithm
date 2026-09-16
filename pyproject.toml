@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantum-viterbi"
+dynamic = ["version"]
+description = "Quantum and classical Viterbi decoding of the rate-1/2 (5, 7) convolutional code, with Qiskit, PennyLane or NumPy"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Matteo Di Salvo" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "qiskit>=1.0",
+    "matplotlib>=3.7",
+]
+keywords = ["quantum computing", "viterbi", "grover", "convolutional codes", "qiskit", "pennylane"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.optional-dependencies]
+pennylane = ["pennylane>=0.36"]
+dev = ["pennylane>=0.36", "pytest>=7", "ruff>=0.6"]
+
+[project.urls]
+Homepage = "https://github.com/matteodisalvo/Quantum-Viterbi-Algorithm"
+Documentation = "https://github.com/matteodisalvo/Quantum-Viterbi-Algorithm/tree/main/docs"
+Issues = "https://github.com/matteodisalvo/Quantum-Viterbi-Algorithm/issues"
+
+[project.scripts]
+quantum-viterbi = "quantum_viterbi.cli:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "quantum_viterbi.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+# Snippets in the documentation keep their comments aligned by hand
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
